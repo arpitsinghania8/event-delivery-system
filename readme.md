@@ -32,35 +32,33 @@ Follow the steps below to set up and run the event delivery system on your local
     
     The server will start on port 3000 by default.
 
-To receive and queue events:
+2. To receive and queue events:
 
-Send a POST request with an event payload to http://localhost:3000/api/events. Replace { "userID": "123", "payload": "Event data" } with your event data.
+    Send a POST request with an event payload to http://localhost:3000/api/events. Replace { "userID": "123", "payload": "Event data" } with your event data.
 
-bash
-Copy code
-curl -X POST -H "Content-Type: application/json" -d '{ "userID": "123", "payload": "Event data" }' http://localhost:3000/api/events
-To process events with retries and backoff:
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{ "userID": "123", "payload": "Event data" }' http://localhost:3000/api/events
 
-Send a GET request to http://localhost:3000/api/process-events.
+3. To process events with retries and backoff:
 
-bash
-Copy code
-curl http://localhost:3000/api/process-events
-The system will simulate delivery attempts with exponential backoff for failed events.
+    Send a GET request to http://localhost:3000/api/process-events.
 
-Docker (Optional)
-You can also run the system using Docker for containerized deployment.
+    ```bash
+    curl http://localhost:3000/api/process-events
 
-Build the Docker image:
+    The system will simulate delivery attempts with exponential backoff for failed events.
 
-bash
-Copy code
-docker build -t event-delivery-system .
-Run a Docker container:
+###Docker (Optional)
+    You can also run the system using Docker for containerized deployment.
 
-bash
-Copy code
-docker run -p 3000:3000 event-delivery-system
-Customization
-You can modify the event payload structure in the EventModel.js file.
-Replace the simulateDelivery function in EventController.js with your actual delivery logic.
+    1. Build the Docker image:
+
+    ```bash
+    docker build -t event-delivery-system .
+    ```
+    
+    2. Run a Docker container:
+
+    ```bash
+    docker run -p 3000:3000 event-delivery-system
+    ```
