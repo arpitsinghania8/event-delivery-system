@@ -18,18 +18,19 @@ Follow the steps below to set up and run the event delivery system on your local
    ```bash
    git clone https://github.com/your-username/event-delivery-system.git
    cd event-delivery-system
-Install dependencies:
+2. Install dependencies:
 
-bash
-Copy code
-npm install
-Usage
-Start the Node.js server:
+    ```bash
+    npm install
 
-bash
-Copy code
-npm start
-The server will start on port 3000 by default.
+### Usage
+
+1. Start the Node.js server:
+
+    ```bash
+    npm start
+    
+    The server will start on port 3000 by default.
 
 To receive and queue events:
 
