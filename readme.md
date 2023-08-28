@@ -48,7 +48,7 @@ Follow the steps below to set up and run the event delivery system on your local
 
     The system will simulate delivery attempts with exponential backoff for failed events.
 
-###Docker (Optional)
+### Docker (Optional)
     You can also run the system using Docker for containerized deployment.
 
     1. Build the Docker image:
